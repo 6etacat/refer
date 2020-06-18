@@ -1,4 +1,6 @@
 ## Note
+Original package from [Licheng Yu](https://github.com/lichengunc) is for Python 2. This package is modified to support Python 3 by [Edgar Margffoy-Tuay](https://github.com/andfoy). More setup instructions added by [Yicong (Michael) Mao](https://github.com/6etacat). 
+
 This API is able to load all 4 referring expression datasets, i.e., RefClef, RefCOCO, RefCOCO+ and RefCOCOg. 
 They are with different train/val/test split by UNC, Google and UC Berkeley respectively. We provide all kinds of splits here.
 Note, RefCOCO+ may change in the future as we are still cleaning it. 
@@ -19,7 +21,9 @@ Yu, Licheng, et al. "Modeling Context in Referring Expressions." ECCV 2016.
 ## Setup
 To install this package, along its dependencies, you can execute:
 ```bash
-pip install -U .
+python setup.py build_ext --inplace
+rm -rf build
+pip install [-U] .
 ```
 This package depends on [Numpy](http://www.numpy.org/), [Matplotlib](https://matplotlib.org/), [scikit-image](http://scikit-image.org/) and [Cython](http://cython.org/), it also depends on the mscoco API mask routines, which are compiled during setup. These mask-related codes are copied from mscoco [API](https://github.com/pdollar/coco).
 
